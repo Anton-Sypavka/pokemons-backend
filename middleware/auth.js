@@ -21,9 +21,9 @@ module.exports = {
     try {
       const token = req.get(REQUEST_HEADERS_AUTHORIZATION) || req.body.token;
 
-      const { user, user: { id } } = await jwtUtil.verifyToken(token);
+      const { user } = await jwtUtil.verifyToken(token);
 
-      req.user_id = id;
+      req.user_id = user._id;
       req.user = user;
 
       next();

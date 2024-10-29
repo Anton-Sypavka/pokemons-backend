@@ -46,7 +46,7 @@ module.exports = {
   refreshToken: async (token) => {
     const decodedToken = await jwtUtil.verifyToken(token, REFRESH_TOKEN_TYPE);
 
-    const user = await authRepository.findUser(ID_DB_FIELD, decodedToken.user.id);
+    const user = await authRepository.findUser(ID_DB_FIELD, decodedToken.user._id);
 
     if(!user) {
       throw new ErrorHandler(BAD_REQUEST, 'User does not exists!');

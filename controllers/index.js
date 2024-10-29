@@ -1,3 +1,5 @@
 module.exports = {
-  authController: require('./auth')
+  authController: require('./auth'),
+  pokemonsController: require('./pokemons'),
+  battleController: require('./battle')
 }

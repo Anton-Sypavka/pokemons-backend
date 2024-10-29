@@ -1,3 +1,4 @@
 module.exports = {
-  jwtUtil: require('./jwt')
+  jwtUtil: require('./jwt'),
+  randomNumberUtil: require('./random-number')
 }

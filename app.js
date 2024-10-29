@@ -6,7 +6,12 @@ const cors = require('cors');
 const { PORT, DATABASE, URL } = require("./configs/config");
 const ErrorHandler = require("./errors/error-handler");
 
-const { authRouter } = require("./routes");
+const {
+  authRouter,
+  pokemonsRouter,
+  battleRouter
+} = require("./routes");
+
 
 mongoose.connect(DATABASE)
 
@@ -18,6 +23,8 @@ app.use(cors());
 app.options('*', cors());
 
 app.use('/auth', authRouter);
+app.use('/pokemons', pokemonsRouter);
+app.use('/battle', battleRouter);
 app.get('/ping', (req, res) => res.send('pong'));
 app.use(_globalErrorHandler);
 

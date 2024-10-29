@@ -44,7 +44,6 @@ module.exports = {
       res.json(user);
 
     } catch (error) {
-      console.log(error);
       next(error);
     }
   }

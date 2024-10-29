@@ -3,12 +3,9 @@ const fs = require('fs');
 const path = require('path');
 const { DATABASE } = require('../configs/config');
 const { Pokemon } = require('../models');
+const { getRandomNumber } = require("../utils/random-number");
 
 mongoose.connect(DATABASE);
-
-function getRandomNumber() {
-  return Math.floor(Math.random() * (100 - 35 + 1)) + 35;
-}
 
 const seedData = async () => {
   try {
@@ -16,12 +13,14 @@ const seedData = async () => {
 
     const dataForSeed = data.map(item => ({
       name: item.name.english,
-      type: item.type,
-      hp: item.base?.HP || getRandomNumber(),
-      attack: item.base?.Attack || getRandomNumber(),
-      defense: item.base?.Defense || getRandomNumber(),
-      speed: item.base?.Speed || getRandomNumber(),
+      type: item.type[0],
+      hp: item.base?.HP || getRandomNumber(45, 100),
+      attack: item.base?.Attack || getRandomNumber(45, 100),
+      defense: item.base?.Defense || getRandomNumber(45, 100),
+      speed: item.base?.Speed || getRandomNumber(45, 100),
       species: item.species,
+      level: 1,
+      power: getRandomNumber(1, 10),
       description: item.description,
       image: item.image
     }));

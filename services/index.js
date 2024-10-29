@@ -1,3 +1,5 @@
 module.exports = {
-  authService: require('./auth')
+  authService: require('./auth'),
+  pokemonsService: require('./pokemons'),
+  battleService: require('./battle'),
 }
