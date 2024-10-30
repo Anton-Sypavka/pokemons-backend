@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:nodemon": "npx nodemon app.js",
-    "seed": "node ./data/seed.js"
+    "seed": "node ./data/seed.js",
+    "start": "node app.js"
   },
   "author": "Anton Sypavka",
   "license": "ISC",
