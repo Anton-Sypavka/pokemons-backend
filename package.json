@@ -9,6 +9,9 @@
     "seed": "node ./data/seed.js",
     "start": "node app.js"
   },
+  "engines": {
+    "node": "14.*.*"
+  },
   "author": "Anton Sypavka",
   "license": "ISC",
   "dependencies": {
