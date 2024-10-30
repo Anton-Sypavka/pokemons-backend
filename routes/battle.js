@@ -16,4 +16,16 @@ router.route('/:id')
     battleController.getBattle
   );
 
+router.route('/attack')
+  .post(
+    authMiddleware.isLoggedIn,
+    battleController.attack
+  );
+
+router.route('/quit/:id')
+  .get(
+    authMiddleware.isLoggedIn,
+    battleController.quit
+  );
+
 module.exports = router;

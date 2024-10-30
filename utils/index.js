@@ -1,4 +1,5 @@
 module.exports = {
   jwtUtil: require('./jwt'),
-  randomNumberUtil: require('./random-number')
+  randomNumberUtil: require('./random-number'),
+  GameFinished: require('./GameFinished')
 }

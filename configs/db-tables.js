@@ -3,4 +3,5 @@ module.exports = {
     POKEMON: 'pokemon',
     NONCE: 'nonce',
     BATTLE: 'battle',
+    ACTION: 'action',
 };
