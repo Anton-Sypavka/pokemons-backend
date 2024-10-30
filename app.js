@@ -33,6 +33,7 @@ server.listen(PORT, () => {
 });
 
 function _globalErrorHandler(err, req, res, next) {
+  console.log('Error --->', err);
   const message = err instanceof ErrorHandler ? err.message : 'Something went wrong';
 
   res
